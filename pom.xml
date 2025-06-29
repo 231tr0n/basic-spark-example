@@ -15,7 +15,7 @@
     <scala.version>2.12.20</scala.version>
     <scala.compat.version>2.12</scala.compat.version>
     <spark.version>3.5.6</spark.version>
-    <mainClass>example.Hello</mainClass>
+    <mainClass>com.example.Hello</mainClass>
   </properties>
   <dependencies>
     <dependency>
