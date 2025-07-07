@@ -1,3 +1,7 @@
 target
 .metals
 .bsp
+.bloop
+.vscode
+project/*
+!project/build.properties
