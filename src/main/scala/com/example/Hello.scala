@@ -3,13 +3,7 @@ package com.example
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
 
-import scala.io.Source
-
 object Hello extends App {
-  val source: Iterator[String] = Source
-    .fromResource("customers-2000000.csv")
-    .getLines()
-
   val spark: SparkSession = SparkSession
     .builder()
     .appName("Hello")
@@ -18,7 +12,11 @@ object Hello extends App {
 
   spark.sparkContext.setLogLevel("ERROR")
 
-  val df: DataFrame = spark.read.csv("customers-2000000.csv")
+  val df: DataFrame = spark.read
+    .format("csv")
+    .option("inferSchema", "true")
+    .option("header", "true")
+    .load("src/main/resources/customers.csv")
 
   df.groupBy("Country", "City")
     .count()
