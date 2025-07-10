@@ -10,9 +10,9 @@
   <description>test</description>
   <properties>
     <enforce.mvn.version>3.9.9</enforce.mvn.version>
-    <enforce.jdk.version>21</enforce.jdk.version>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <enforce.jdk.version>17</enforce.jdk.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <scala.version>2.13.16</scala.version>
     <scala.compat.version>2.13</scala.compat.version>
