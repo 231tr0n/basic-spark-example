@@ -3,5 +3,3 @@ target
 .bsp
 .bloop
 .vscode
-project/*
-!project/build.properties
