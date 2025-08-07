@@ -41,6 +41,7 @@ object Hello extends App {
   val spark: SparkSession = SparkSession
     .builder()
     .appName("Hello")
+    .master("spark://127.0.0.1:7077")
     .enableHiveSupport()
     .getOrCreate()
 
