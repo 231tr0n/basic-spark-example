@@ -3,6 +3,8 @@ services:
     image: jlesage/firefox:latest
     ports:
       - "5800:5800"
+    depends_on:
+      - spark
   spark:
     image: bitnami/spark:4.0.0
     environment:
