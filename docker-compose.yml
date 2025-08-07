@@ -11,9 +11,16 @@ services:
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
-      - SPARK_WORKER_MEMORY=1G
-      - SPARK_WORKER_CORES=1
-    ports:
-      - "8081:8081"
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_CORES=4
+    depends_on:
+      - spark
+  spark-worker-2:
+    image: bitnami/spark:4.0.0
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_CORES=4
     depends_on:
       - spark

@@ -50,7 +50,7 @@ object Hello extends App {
     createDataFrame(spark, Right(spark.sparkContext.emptyRDD[Row]))
 
   val rows: Seq[Row] = Source
-    .fromResource("customers.csv")
+    .fromResource("customers-500000.csv")
     .getLines()
     .map(_.split(",").map(_.trim).toSeq)
     .map(line => Row.fromSeq(line))
