@@ -64,10 +64,15 @@ object Hello extends App {
     )
   )
 
-  df.show()
-
-  df.groupBy("Country", "City")
+  df = df
+    .groupBy("Country", "City")
     .count()
     .orderBy("Country", "City")
-    .show(Int.MaxValue)
+
+  df.explain(true)
+
+  // df.show(Int.MaxValue)
+  df.count()
+
+  df.explain("formatted")
 }
