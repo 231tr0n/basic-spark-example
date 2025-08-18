@@ -6,6 +6,13 @@ Sample spark setup with one master and two slaves.
 docker-compose up -d
 ```
 
+## Building the jar
+```bash
+mvn clean install
+```
+> [!NOTE]
+> Use java 17 only
+
 ## Running the jar
 ```bash
 spark-submit --class com.example.Hello target/test-1.0-SNAPSHOT.jar --master spark://localhost:7077
